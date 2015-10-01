@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Python for Water Resources Engineering | index</title>
+<title>Python for Water Resources Engineering | language-basics</title>
 <link rel="icon" href="http://faculty.engineering.ucdavis.edu/favicon.ico" type="image/x-icon" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -177,19 +177,30 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Python-for-Water-Resources-Engineering">Python for Water Resources Engineering<a class="anchor-link" href="#Python-for-Water-Resources-Engineering">&#182;</a></h1><p><a href="http://faculty.engineering.ucdavis.edu/herman/">Jon Herman, University of California, Davis</a></p>
-<h3 id="Getting-started">Getting started<a class="anchor-link" href="#Getting-started">&#182;</a></h3><p>Python is a general-purpose programming language with many powerful open-source libraries for research computing. This will be a beginner tutorial describing how to set up the scientific Python environment on your computer and research tasks common in hydrology and water management.</p>
-<p>First, install the <a href="http://continuum.io/downloads">Anaconda distribution</a>. This includes a number of useful packages (a full list <a href="http://docs.continuum.io/anaconda/pkg-docs">here</a>) and is much easier than managing these packages individually. Choose the Python 2.7 version for your operating system, since not all packages have adopted Python 3 standards yet.</p>
-<p>Once the installation completes, you should see a new program called the Anaconda Launcher. You can run this to access <a href="https://pythonhosted.org/spyder/">Spyder</a>, the interactive development environment (IDE) included with the installation. Spyder should open a new Python file (.py), where you can run:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-Python-language-basics---variables,-loops,-lists,-and-dicts">1. Python language basics - variables, loops, lists, and dicts<a class="anchor-link" href="#1.-Python-language-basics---variables,-loops,-lists,-and-dicts">&#182;</a></h3><p>Even without the scientific packages, Python provides readable, easy-to-use variables and data structures. There are already very good tutorials on these topics from a computer science perspective, such as <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a>. This will be a quick overview of the basics before moving on to engineering applications.</p>
+<p><strong>Defining variables (no type declaration):</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;hello world!&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span> <span class="c"># this is a comment</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s">&#39;this is a string&#39;</span>
+<span class="k">print</span> <span class="s">&quot;Output = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -202,7 +213,7 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>hello world!
+<pre>Output = 5, 10.0
 </pre>
 </div>
 </div>
@@ -216,19 +227,372 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In general you should be able to copy and paste any code from this tutorial into your file and run it. When you have this file open (call it <code>helloworld.py</code> for example) and press "Run" in the Spyder interface, behind the scenes Spyder is calling <code>python helloworld.py</code>. In other words, it is running the Python interpreter on your file to execute the code you wrote. Importantly, Spyder is not the only way to run Python code! There are other IDEs out there, and you could even use a simple text editor and call the interpreter yourself from the command line. You may want to explore other editors/IDEs as you get more comfortable with the language.</p>
-<h3 id="Some-general-tips">Some general tips<a class="anchor-link" href="#Some-general-tips">&#182;</a></h3><ul>
-<li>Using the code in these notebooks as a starting point, make your own modifications and see what happens. Try to think about what you expect to happen before running the program.</li>
-<li>The computer will do exactly what you tell it to do, which is not always what you want it to do. The correctness of your program is up to you!</li>
-<li>Much like writing a paper, writing code is a process of drafting and revising. Aim for a working version first, then worry about efficiency. The latter step will go a long way toward making your research reproducible.</li>
-<li>Google is your friend. One of the many benefits of Python is the online community, where most problems you'll encounter have already been answered.</li>
-<li>Don't reinvent the wheel. Many numerical operations are already included in packages like NumPy and SciPy; check first before writing them yourself.</li>
-</ul>
-<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><ol>
-<li><a href="language-basics.html">Python language basics - variables, loops, lists, and dicts</a></li>
-<li><a href="numpy-matplotlib.html">Numpy and Matplotlib - array/matrix operations and plotting</a></li>
-<li><a href="optimization.html">Optimization - LP, QP, NLP</a></li>
-</ol>
+<p><strong>Lists and loops:</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="s">&#39;some words&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10.0
+3.0
+some words
+2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>If statements</strong>: As with <code>for</code> loops, these require <code>:</code> characters at the end of the line. Other lines in Python do not require line ending characters. Use <code>and</code> and <code>or</code> keywords to connect multiple logical statements.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;a is 5&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;a is 3&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;a is neither 5 nor 3&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a is 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Whitespace</strong>: As you see in the previous examples, whitespace matters in Python. There are no brackets <code>{}</code> to denote code blocks. Use either spaces or tabs to indent <code>for</code> loops and <code>if</code> statements.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Ranges and slicing:</strong>
+The <code>range()</code> function returns a sequence of integers in a list. Its arguments are <code>(start, stop, step)</code>, and the <code>stop</code> value is not included in the range. Only <code>stop</code> is required; default values for <code>start</code> and <code>step</code> are 0 and 1, respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">L</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="k">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 3, 5, 7, 9]
+45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Slicing (retrieving values from a list) follows a similar syntax: <code>start:stop:step</code>. Any of these can be omitted with the same default values as above. This is important, because later we'll use NumPy arrays and matrices with the same syntax for indexing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">L</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c"># get a single value (Python indices start at 0)</span>
+<span class="k">print</span> <span class="n">L</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span> <span class="c"># values 5-end</span>
+<span class="k">print</span> <span class="n">L</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="c"># values start-5</span>
+<span class="k">print</span> <span class="n">L</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c"># values 3-9 in steps of 2</span>
+<span class="k">print</span> <span class="n">L</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c"># whole list with step=-1 (reverse order)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+[5, 6, 7, 8, 9]
+[0, 1, 2, 3, 4]
+[3, 5, 7]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lists may look like vectors, but in general they are too slow to use for scientific computing applications, especially if you <code>append</code> new values to the end of the list. In the next tutorial, NumPy will solve that issue for us.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Dictionaries</strong>: A set of key-value pairs, which you can think of as a lookup table. Unlike lists, the values in a dictionary are not ordered, and they are indexed with strings instead of integers. Lookups are very fast because you don't have to search for items.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Terry&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">160</span><span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;This person is named &#39;</span> <span class="o">+</span> <span class="n">person</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39; and they are &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s">&#39; years old&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This person is named Terry and they are 42 years old
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Combining lists and dicts:</strong> Both data structures are flexible enough to accept values of any type. This means you can have a list of dictionaries, a dictionary of lists, and any number of nested combinations you can think of! Dictionaries are a good way to handle data in your program, even more complicated objects like matrices, because the items are easy to access.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">person_2</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;Chris&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span> <span class="s">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">155</span><span class="p">}</span>
+<span class="n">people</span> <span class="o">=</span> <span class="p">[</span><span class="n">person</span><span class="p">,</span> <span class="n">person_2</span><span class="p">]</span>
+<span class="n">company</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;workers&#39;</span><span class="p">:</span> <span class="n">people</span><span class="p">,</span> <span class="s">&#39;num_workers&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">people</span><span class="p">)}</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">company</span><span class="p">[</span><span class="s">&#39;workers&#39;</span><span class="p">]:</span>
+    <span class="k">print</span> <span class="n">p</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Terry
+Chris
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Functions</strong>: A function accepts one or more arguments and returns a value. We've already seen the <code>range()</code> function, for example, but we can define our own too. The arguments and return values can be any type, including lists and dicts.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">square_list</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">]</span> <span class="c"># this is called a &quot;list comprehension&quot; -- makes things easy</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">square_list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>25
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Keyword arguments</strong>: Functions can accept either positional or keyword arguments. Positional arguments are identified by their order, while keyword arguments are explicitly named and may be given a default value in the function definition.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>25
+49
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Again, this is only an overview of the Python language. Whenever you see syntax you don't recognize, you should check whether it comes from Python itself or from a particular scientific package. Spend some time with <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> for a much more detailed tutorial of the language.</p>
+<p>On to engineering! <a href="numpy-matplotlib.html">Part 2: NumPy and Matplotlib</a></p>
 
 </div>
 </div>
